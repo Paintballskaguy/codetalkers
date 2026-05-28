@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Icon from './Icon';
 
 const INITIAL_SNIPPETS = [
   {
@@ -38,7 +39,7 @@ async def profile_database_queries(request: Request, call_next):
     
     # Check queries execution metrics
     if duration > 0.5:
-        print(f"⚠️ Slow request detected: {request.url.path} in {duration:.4f}s")
+        print(f"Slow request detected: {request.url.path} in {duration:.4f}s")
     return response`,
     language: 'python',
     author: 'David Vance',
@@ -96,14 +97,15 @@ export default function SnippetShowcase({ onSelectSnippet }) {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '30px' }}>
         {snippets.map((snippet) => (
-          <div key={snippet.id} className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '20px' }}>
+          <article key={snippet.id} className="glass-panel" style={{ padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '20px' }}>
             <div>
               {/* Header profile row */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <img 
-                  src={snippet.avatar} 
-                  alt={snippet.author}
+                <img
+                  src={snippet.avatar}
+                  alt={`Avatar of ${snippet.author}`}
                   style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid hsl(var(--accent-violet))' }}
+                  loading="lazy"
                 />
                 <div>
                   <h4 style={{ fontSize: '14px', fontWeight: '600' }}>{snippet.author}</h4>
@@ -130,29 +132,31 @@ export default function SnippetShowcase({ onSelectSnippet }) {
             {/* Footer Interactive bar */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid hsl(var(--border-subtle))', paddingTop: '16px', marginTop: '10px' }}>
               <div style={{ display: 'flex', gap: '16px' }}>
-                <button 
+                <button
                   onClick={() => handleVote(snippet.id)}
-                  style={{ background: 'transparent', border: 'none', color: 'hsl(var(--text-secondary))', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', transition: 'var(--transition-fast)' }}
-                  onMouseEnter={(e) => e.target.style.color = 'hsl(var(--accent-pink))'}
-                  onMouseLeave={(e) => e.target.style.color = 'hsl(var(--text-secondary))'}
+                  className="vote-btn"
+                  aria-label={`Upvote ${snippet.title}. Current votes: ${snippet.votes}`}
                 >
-                  ❤️ {snippet.votes}
+                  <Icon name="heart" size={14} />
+                  <span>{snippet.votes}</span>
                 </button>
-                
+
                 <span style={{ color: 'hsl(var(--text-muted))', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  💬 {snippet.comments} comments
+                  <Icon name="message" size={14} />
+                  {snippet.comments} comments
                 </span>
               </div>
 
-              <button 
-                className="btn-secondary" 
+              <button
+                className="btn-secondary"
                 style={{ padding: '8px 16px', borderRadius: '8px', fontSize: '13px' }}
                 onClick={() => onSelectSnippet(snippet)}
+                aria-label={`Open ${snippet.title} in Code Clarifier`}
               >
                 Open in Clarifier
               </button>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

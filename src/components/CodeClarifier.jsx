@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Icon from './Icon';
 
 export default function CodeClarifier({ defaultSnippet }) {
@@ -21,39 +21,39 @@ function calculatePayout(hours, rate) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (defaultSnippet) {
+    if (!defaultSnippet) return;
+
+    const autoClarify = async () => {
       setCode(defaultSnippet.code);
       setLanguage(defaultSnippet.language);
-      
-      const autoClarify = async () => {
-        setIsLoading(true);
-        setError(null);
-        try {
-          const response = await fetch('/api/clarify', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ code: defaultSnippet.code, language: defaultSnippet.language }),
-          });
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch('/api/clarify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ code: defaultSnippet.code, language: defaultSnippet.language }),
+        });
 
-          if (!response.ok) {
-            const errData = await response.json();
-            throw new Error(errData.detail || 'Failed to analyze code snippet.');
-          }
-
-          const data = await response.json();
-          setResult(data);
-          setActiveStepIndex(0);
-        } catch (err) {
-          console.error(err);
-          setError(err.message || 'Server error. Make sure the Python backend is running.');
-        } finally {
-          setIsLoading(false);
+        if (!response.ok) {
+          const errData = await response.json();
+          throw new Error(errData.detail || 'Failed to analyze code snippet.');
         }
-      };
-      autoClarify();
-    }
+
+        const data = await response.json();
+        setResult(data);
+        setActiveStepIndex(0);
+      } catch (err) {
+        console.error(err);
+        setError(err.message || 'Server error. Make sure the Python backend is running.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    autoClarify();
   }, [defaultSnippet]);
 
 

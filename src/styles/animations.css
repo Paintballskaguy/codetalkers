@@ -1,0 +1,50 @@
+/* Text Shimmer Micro-Animation */
+@keyframes text-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.shimmer-gradient-text {
+  background: linear-gradient(-45deg, hsl(var(--accent-violet)), hsl(var(--accent-pink)), hsl(var(--accent-blue)), hsl(var(--accent-emerald)));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 8s ease infinite;
+}
+
+/* Floating Animation for Hero Elements */
+@keyframes floating-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-element {
+  animation: floating-slow 6s ease-in-out infinite;
+}
+
+/* Perforated Stub Tear-Off Keyframes */
+@keyframes stub-tear {
+  0% { transform: rotate(0) translate(0, 0); opacity: 1; }
+  25% { transform: rotate(-4deg) translate(-5px, 20px); opacity: 0.9; }
+  100% { transform: rotate(-45deg) translate(-300px, 800px); opacity: 0; pointer-events: none; }
+}
+
+.ticket-torn-stub {
+  animation: stub-tear 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .floating-element, .ticker-content {
+    animation: none !important;
+  }
+  .ticket-torn-stub {
+    animation: ticket-fade 0.5s ease forwards !important;
+  }
+  @keyframes ticket-fade {
+    to { opacity: 0; transform: scale(0.95); }
+  }
+}
+

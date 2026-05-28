@@ -1,0 +1,37 @@
+/* Accessibility: visible focus rings */
+:focus-visible {
+  outline: 2px solid hsl(var(--accent-violet));
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid hsl(var(--accent-violet));
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Beautiful Animated Background Mesh */
+.app-bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+  background: 
+    radial-gradient(circle at 10% 20%, hsla(var(--accent-violet) / 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, hsla(var(--accent-pink) / 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, hsla(var(--bg-base) / 1) 0%, hsla(var(--bg-base) / 1) 100%);
+}
+
+/* Premium Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
