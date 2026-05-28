@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Icon from './Icon';
 
 export default function CodeClarifier({ defaultSnippet }) {
   const [code, setCode] = useState(`// Paste or write your code block here to try it!
@@ -130,8 +131,19 @@ function calculatePayout(hours, rate) {
                 disabled={isLoading}
                 className="btn-primary"
                 style={{ width: '100%', justifyContent: 'center' }}
+                aria-label={isLoading ? 'Analyzing code snippet' : 'Clarify code snippet'}
               >
-                {isLoading ? 'Analyzing...' : 'Clarify Snippet'}
+                {isLoading ? (
+                  <>
+                    <Icon name="loader" size={16} className="spin-animation" />
+                    Analyzing…
+                  </>
+                ) : (
+                  <>
+                    <Icon name="search" size={16} />
+                    Clarify Snippet
+                  </>
+                )}
               </button>
             </div>
           </div>

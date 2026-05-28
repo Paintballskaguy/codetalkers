@@ -7,7 +7,7 @@ const DEVELOPER_SQUAD = [
   { name: 'Hailee & Nathan', role: 'Technical Contributors', icon: '⚡', bio: 'Supported by Hailee Evans and Nathan Wilson to scale local SEO frameworks and edge database pipelines.' }
 ];
 
-export default function LandingPage({ onEnterDashboard }) {
+export default function LandingPage() {
   const [currentTheme, setCurrentTheme] = useState('brutalist');
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [opsCost, setOpsCost] = useState(3000);
@@ -232,9 +232,11 @@ export default function LandingPage({ onEnterDashboard }) {
           <a href="#mission" style={{ color: 'hsl(var(--text-secondary))', textDecoration: 'none', fontSize: '14px', fontWeight: '600', transition: 'var(--transition-fast)' }} onMouseEnter={(e) => e.target.style.color = 'hsl(var(--accent-pink))'} onMouseLeave={(e) => e.target.style.color = 'hsl(var(--text-secondary))'}>Our Mission</a>
           <a href="#bento" style={{ color: 'hsl(var(--text-secondary))', textDecoration: 'none', fontSize: '14px', fontWeight: '600', transition: 'var(--transition-fast)' }} onMouseEnter={(e) => e.target.style.color = 'hsl(var(--accent-pink))'} onMouseLeave={(e) => e.target.style.color = 'hsl(var(--text-secondary))'}>Solutions</a>
           <a href="#calculator" style={{ color: 'hsl(var(--text-secondary))', textDecoration: 'none', fontSize: '14px', fontWeight: '600', transition: 'var(--transition-fast)' }} onMouseEnter={(e) => e.target.style.color = 'hsl(var(--accent-pink))'} onMouseLeave={(e) => e.target.style.color = 'hsl(var(--text-secondary))'}>ROI Calculator</a>
-          <button onClick={onEnterDashboard} className="btn-brutal">
-            Dev Toolkit ⚡
-          </button>
+          
+          {/* Header Action Button: Pointing smoothly down to the Perforated Ticket Form */}
+          <a href="#ticket" className="btn-brutal" style={{ textDecoration: 'none' }}>
+            Book a Quote 🎟️
+          </a>
         </nav>
       </header>
 
@@ -261,9 +263,10 @@ export default function LandingPage({ onEnterDashboard }) {
           />
         </div>
 
+        {/* Hero Actions: Smooth Booking & Solutions scrolling */}
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-          <a href="#ticket" className="btn-brutal">Secure Your Website Quote</a>
-          <button onClick={onEnterDashboard} className="btn-brutal" style={{ background: 'rgba(128,128,128,0.06)', color: 'hsl(var(--text-primary))', border: '2px solid rgba(128,128,128,0.12)' }}>Explore Toolkit</button>
+          <a href="#ticket" className="btn-brutal" style={{ textDecoration: 'none' }}>Book a Free Web Audit 🎟️</a>
+          <a href="#bento" className="btn-brutal" style={{ background: 'rgba(128,128,128,0.06)', color: 'hsl(var(--text-primary))', border: '2px solid rgba(128,128,128,0.12)', textDecoration: 'none' }}>See Our Solutions</a>
         </div>
       </section>
 
@@ -470,7 +473,7 @@ export default function LandingPage({ onEnterDashboard }) {
                 </div>
               </div>
 
-              <a href="#ticket" className="btn-brutal" style={{ justifyContent: 'center', marginTop: '10px' }}>
+              <a href="#ticket" className="btn-brutal" style={{ justifyContent: 'center', marginTop: '10px', textDecoration: 'none' }}>
                 Get More Clients Now ⚡
               </a>
             </div>
