@@ -56,6 +56,10 @@ export default function BentoFeatures() {
             <img
               src="/logo.png"
               alt="CodeTalkers Logo"
+              width="80"
+              height="80"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

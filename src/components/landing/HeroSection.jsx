@@ -1,6 +1,6 @@
 import useReducedMotion from '../../hooks/useReducedMotion';
 
-export default function HeroSection({ onEnterDashboard, isDarkMode }) {
+export default function HeroSection({ isDarkMode }) {
   const reducedMotion = useReducedMotion();
 
   return (
@@ -25,8 +25,12 @@ export default function HeroSection({ onEnterDashboard, isDarkMode }) {
         <img
           src="/wordmark.png"
           alt="CodeTalkers Premium Wordmark"
+          width="400"
+          height="60"
+          decoding="async"
           style={{
             maxHeight: '60px',
+            width: 'auto',
             opacity: 0.95,
             filter: isDarkMode ? 'drop-shadow(0 0 20px hsla(var(--accent-violet) / 0.15))' : 'none',
           }}
@@ -35,8 +39,8 @@ export default function HeroSection({ onEnterDashboard, isDarkMode }) {
 
       <div className="hero-actions">
         <a href="#ticket" className="btn-brutal">Secure Your Website Quote</a>
-        <button
-          onClick={onEnterDashboard}
+        <a
+          href="#bento"
           className="btn-brutal"
           style={{
             background: 'rgba(128,128,128,0.06)',
@@ -45,7 +49,7 @@ export default function HeroSection({ onEnterDashboard, isDarkMode }) {
           }}
         >
           Explore Toolkit
-        </button>
+        </a>
       </div>
     </section>
   );

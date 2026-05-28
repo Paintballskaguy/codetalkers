@@ -5,7 +5,7 @@ export default function LandingFooter({ isDarkMode }) {
       <div className="footer-main">
         <div className="footer-brand">
           <div className="footer-brand-row">
-            <img src="/logo.png" alt="CodeTalkers Logo" />
+            <img src="/logo.png" alt="CodeTalkers Logo" width="40" height="40" loading="lazy" decoding="async" />
             <h3>CodeTalkers</h3>
           </div>
           <p>
@@ -18,6 +18,10 @@ export default function LandingFooter({ isDarkMode }) {
             <img
               src="/footer-badge.png"
               alt="Built by CodeTalkers Footer Badge"
+              width="180"
+              height="auto"
+              loading="lazy"
+              decoding="async"
               style={{
                 filter: isDarkMode ? 'drop-shadow(0 0 20px hsla(var(--accent-violet) / 0.25))' : 'none',
               }}

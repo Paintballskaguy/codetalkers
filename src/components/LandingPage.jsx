@@ -7,7 +7,7 @@ import ROICalculator from './landing/ROICalculator';
 import BookingTicket from './landing/BookingTicket';
 import LandingFooter from './landing/LandingFooter';
 
-export default function LandingPage({ onEnterDashboard }) {
+export default function LandingPage() {
   const [currentTheme, setCurrentTheme] = useState('brutalist');
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [opsCost, setOpsCost] = useState(3000);
@@ -39,15 +39,15 @@ export default function LandingPage({ onEnterDashboard }) {
         </>
       )}
 
-      <LandingHeader
-        currentTheme={currentTheme}
-        setCurrentTheme={setCurrentTheme}
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-        onEnterDashboard={onEnterDashboard}
-      />
+      <main id="main-content">
+        <LandingHeader
+          currentTheme={currentTheme}
+          setCurrentTheme={setCurrentTheme}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+        />
 
-      <HeroSection onEnterDashboard={onEnterDashboard} isDarkMode={isDarkMode} />
+        <HeroSection isDarkMode={isDarkMode} />
 
       <KineticTicker />
 
@@ -60,9 +60,10 @@ export default function LandingPage({ onEnterDashboard }) {
         setFriction={setFriction}
       />
 
-      <BookingTicket />
+        <BookingTicket />
 
-      <LandingFooter isDarkMode={isDarkMode} />
+        <LandingFooter isDarkMode={isDarkMode} />
+      </main>
     </div>
   );
 }

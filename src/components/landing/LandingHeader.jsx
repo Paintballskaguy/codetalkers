@@ -11,7 +11,6 @@ export default function LandingHeader({
   setCurrentTheme,
   isDarkMode,
   setIsDarkMode,
-  onEnterDashboard,
 }) {
   return (
     <header
@@ -36,6 +35,9 @@ export default function LandingHeader({
           src="/logo.png"
           alt="CodeTalkers Logo"
           className="brand-logo"
+          width="42"
+          height="42"
+          decoding="async"
         />
         <span className="brand-text">CodeTalkers</span>
       </a>
@@ -68,9 +70,9 @@ export default function LandingHeader({
         <a href="#mission" className="nav-anchor">Our Mission</a>
         <a href="#bento" className="nav-anchor">Solutions</a>
         <a href="#calculator" className="nav-anchor">ROI Calculator</a>
-        <button onClick={onEnterDashboard} className="btn-brutal cta-btn">
+        <a href="#calculator" className="btn-brutal cta-btn">
           Dev Toolkit <Icon name="zap" size={14} />
-        </button>
+        </a>
       </nav>
     </header>
   );
