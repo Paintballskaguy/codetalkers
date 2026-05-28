@@ -1,3 +1,4 @@
+
 /* --- LANDING PAGE COMPONENT STYLES --- */
 
 /* Hero Background Blurs */
@@ -393,6 +394,131 @@
 
 @media (max-width: 1024px) {
   .stat-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 80px 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portfolio-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: hsl(var(--text-primary));
+  margin-top: 12px;
+}
+
+.portfolio-header p {
+  color: hsl(var(--text-secondary));
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-card:hover {
+  transform: var(--theme-card-hover-transform, translateY(-4px));
+}
+
+.portfolio-preview {
+  position: relative;
+  height: 220px;
+  background: rgba(128,128,128,0.04);
+  border-bottom: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-card:hover .portfolio-preview img {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.portfolio-accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.portfolio-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.portfolio-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.portfolio-client {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: hsl(var(--text-muted));
+}
+
+.portfolio-meta h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: hsl(var(--text-primary));
+}
+
+.portfolio-desc {
+  color: hsl(var(--text-secondary));
+  font-size: 14px;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-actions {
+  margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
     grid-template-columns: 1fr;
   }
 }

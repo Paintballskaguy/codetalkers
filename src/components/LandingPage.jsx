@@ -4,6 +4,7 @@ import HeroSection from './landing/HeroSection';
 import KineticTicker from './landing/KineticTicker';
 import BentoFeatures from './landing/BentoFeatures';
 import ROICalculator from './landing/ROICalculator';
+import PortfolioGrid from './landing/PortfolioGrid';
 import BookingTicket from './landing/BookingTicket';
 import LandingFooter from './landing/LandingFooter';
 
@@ -52,6 +53,8 @@ export default function LandingPage() {
       <KineticTicker />
 
       <BentoFeatures />
+
+      <PortfolioGrid />
 
       <ROICalculator
         opsCost={opsCost}

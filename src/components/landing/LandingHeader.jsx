@@ -69,6 +69,7 @@ export default function LandingHeader({
 
         <a href="#mission" className="nav-anchor">Our Mission</a>
         <a href="#bento" className="nav-anchor">Solutions</a>
+        <a href="#portfolio" className="nav-anchor">Portfolio</a>
         <a href="#calculator" className="nav-anchor">ROI Calculator</a>
         <a href="#calculator" className="btn-brutal cta-btn">
           Dev Toolkit <Icon name="zap" size={14} />
