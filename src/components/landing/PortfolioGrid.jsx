@@ -8,8 +8,8 @@ const PROJECTS = [
     description: 'A professional industrial supply website with product catalogs, contact forms, and mobile-first responsive design built for B2B client acquisition.',
     tags: ['React', 'Vite', 'Responsive'],
     category: 'Web App',
-    image: '/logo.png',
-    url: 'https://bomantwinec.com/',
+    image: '/project-boman-twine.jpg',
+    url: 'https://bomantwineventcenter.com/en/',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const PROJECTS = [
     description: 'A modern realtor platform with property listings, agent profiles, and lead capture forms designed to convert browsers into buyers.',
     tags: ['React', 'Vercel', 'SEO-Optimized'],
     category: 'E-Commerce',
-    image: '/logo.png',
+    image: '/project-green-realty.jpg',
     url: 'https://realtor-green.vercel.app/',
   },
 ];
