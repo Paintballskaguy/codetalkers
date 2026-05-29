@@ -1,22 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LandingHeader from './landing/LandingHeader';
 import HeroSection from './landing/HeroSection';
 import KineticTicker from './landing/KineticTicker';
 import BentoFeatures from './landing/BentoFeatures';
-import ROICalculator from './landing/ROICalculator';
 import PortfolioGrid from './landing/PortfolioGrid';
+import StatsSection from './landing/StatsSection';
+import ROICalculator from './landing/ROICalculator';
 import BookingTicket from './landing/BookingTicket';
 import LandingFooter from './landing/LandingFooter';
 
 export default function LandingPage() {
-  const [currentTheme, setCurrentTheme] = useState('brutalist');
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [opsCost, setOpsCost] = useState(3000);
   const [friction, setFriction] = useState(40);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
-      className={`theme-${currentTheme} ${isDarkMode ? 'mode-dark' : 'mode-light'}`}
+      className="theme-minimalist mode-dark"
       style={{
         position: 'relative',
         overflowX: 'hidden',
@@ -26,46 +41,41 @@ export default function LandingPage() {
         transition: 'background-color 0.5s ease, color 0.3s ease',
       }}
     >
-      {/* Floating Gradient Blurs (Hidden in light mode for crisp contrast) */}
-      {isDarkMode && (
-        <>
-          <div
-            aria-hidden="true"
-            className="hero-blur hero-blur-violet"
-          />
-          <div
-            aria-hidden="true"
-            className="hero-blur hero-blur-pink"
-          />
-        </>
-      )}
+      {/* Floating Gradient Blobs */}
+      <>
+        <div
+          aria-hidden="true"
+          className="hero-blur hero-blur-violet animate-blob"
+        />
+        <div
+          aria-hidden="true"
+          className="hero-blur hero-blur-pink animate-blob animation-delay-2000"
+        />
+      </>
 
       <main id="main-content">
-        <LandingHeader
-          currentTheme={currentTheme}
-          setCurrentTheme={setCurrentTheme}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
+        <LandingHeader />
+
+        <HeroSection />
+
+        <KineticTicker />
+
+        <BentoFeatures />
+
+        <PortfolioGrid />
+
+        <StatsSection />
+
+        <ROICalculator
+          opsCost={opsCost}
+          setOpsCost={setOpsCost}
+          friction={friction}
+          setFriction={setFriction}
         />
-
-        <HeroSection isDarkMode={isDarkMode} />
-
-      <KineticTicker />
-
-      <BentoFeatures />
-
-      <PortfolioGrid />
-
-      <ROICalculator
-        opsCost={opsCost}
-        setOpsCost={setOpsCost}
-        friction={friction}
-        setFriction={setFriction}
-      />
 
         <BookingTicket />
 
-        <LandingFooter isDarkMode={isDarkMode} />
+        <LandingFooter />
       </main>
     </div>
   );

@@ -1,11 +1,13 @@
 import useReducedMotion from '../../hooks/useReducedMotion';
 
 const ITEMS = [
-  'WE WEAVE TRADITIONAL DESIGN',
-  'WE WRITE HIGH-PERFORMANCE REACT',
-  'WE MODERNIZES WEB ASSETS',
-  'GET CLIENTS IN YOUR DOOR',
-  '100% HAND-CODED IN OKLAHOMA',
+  'STRATEGY',
+  'DESIGN',
+  'DEVELOPMENT',
+  'SEO',
+  'AI SOLUTIONS',
+  'BRANDING',
+  'UI/UX',
 ];
 
 export default function KineticTicker() {

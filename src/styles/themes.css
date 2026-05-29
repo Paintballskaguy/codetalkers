@@ -1,106 +1,42 @@
-/* --- THEME STYLING SYSTEM --- */
+/* --- UNIFIED ARITHMIFY THEME --- */
 
-/* 1. Default / Neo-Brutalist Theme */
-.theme-brutalist {
-  --theme-border-radius: 0px;
-  --theme-border: 2px solid white;
-  --theme-shadow: 6px 6px 0px 0px hsl(var(--accent-violet));
-  --theme-shadow-header: 4px 4px 0px 0px hsl(var(--accent-violet));
-  --theme-shadow-btn: 4px 4px 0px 0px hsl(var(--accent-violet));
-  --theme-shadow-btn-hover: 6px 6px 0px 0px hsl(var(--accent-pink));
-  --theme-shadow-ticket: 8px 8px 0px 0px hsl(var(--accent-pink));
-  --theme-card-bg: rgba(12, 12, 15, 0.95);
-  --theme-header-bg: rgba(10, 10, 12, 0.9);
-  --theme-accent-color: hsl(var(--accent-violet));
-  
-  --theme-btn-bg: white;
-  --theme-btn-color: black;
-  --theme-btn-border: 2px solid black;
-  --theme-btn-hover-transform: translate(-2px, -2px);
-  --theme-btn-active-transform: translate(2px, 2px);
-  --theme-shadow-btn-active: 0px 0px 0px 0px black;
-
-  --theme-shadow-hover: 12px 12px 0px 0px hsl(var(--accent-pink));
-  --theme-shadow-hover-emerald: 12px 12px 0px 0px hsl(var(--accent-emerald));
-  --theme-shadow-hover-amber: 12px 12px 0px 0px hsl(var(--accent-amber));
-  --theme-card-hover-transform: translate(-4px, -4px);
-
-  /* Page background */
-  --bg-base: 240 10% 4%;
-}
-
-/* 2. Apple Minimalist / Modern Sleek Theme */
-.theme-minimalist {
-  --theme-border-radius: 16px;
-  --theme-border: 1px solid rgba(255, 255, 255, 0.08);
-  --theme-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 1px rgba(255, 255, 255, 0.1);
-  --theme-shadow-header: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.1);
-  --theme-shadow-btn: 0 4px 15px rgba(138, 75, 243, 0.3);
-  --theme-shadow-btn-hover: 0 8px 25px rgba(138, 75, 243, 0.5);
-  --theme-shadow-ticket: 0 20px 50px rgba(0, 0, 0, 0.5);
-  --theme-card-bg: rgba(18, 18, 22, 0.7);
-  --theme-header-bg: rgba(10, 10, 12, 0.75);
-  --theme-accent-color: hsl(var(--accent-pink));
-  
-  --theme-btn-bg: linear-gradient(135deg, hsl(var(--accent-violet)) 0%, hsl(var(--accent-pink)) 100%);
-  --theme-btn-color: white;
-  --theme-btn-border: none;
-  --theme-btn-hover-transform: translateY(-1px);
-  --theme-btn-active-transform: translateY(1px);
-  --theme-shadow-btn-active: 0 2px 8px rgba(138, 75, 243, 0.3);
-
-  --theme-shadow-hover: 0 20px 45px rgba(138, 75, 243, 0.25);
-  --theme-shadow-hover-emerald: 0 20px 45px rgba(150, 83, 60, 0.25);
-  --theme-shadow-hover-amber: 0 20px 45px rgba(38, 90, 60, 0.25);
-  --theme-card-hover-transform: translateY(-4px);
-
-  /* Page background */
-  --bg-base: 240 12% 5%;
-}
-
-/* 3. Traditional Organic / Warm Earthy Theme */
+:root,
+.theme-brutalist,
+.theme-minimalist,
 .theme-organic {
-  --theme-border-radius: 8px;
-  --theme-border: 2px solid rgba(222, 110, 75, 0.25);
-  --theme-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 4px 4px 0px 0px rgba(222, 110, 75, 0.15);
-  --theme-shadow-header: 0 6px 20px rgba(0, 0, 0, 0.2), 3px 3px 0px 0px rgba(222, 110, 75, 0.15);
-  --theme-shadow-btn: 3px 3px 0px 0px rgba(222, 110, 75, 0.8);
-  --theme-shadow-btn-hover: 4px 4px 0px 0px rgba(75, 174, 222, 0.8);
-  --theme-shadow-ticket: 6px 6px 0px 0px rgba(75, 174, 222, 0.8);
-  --theme-card-bg: rgba(28, 22, 18, 0.9);
-  --theme-header-bg: rgba(22, 18, 16, 0.9);
-  --theme-accent-color: rgb(222, 110, 75);
+  --theme-border-radius: 24px;
+  --theme-border: 1px solid rgba(255, 255, 255, 0.06);
+  --theme-shadow: none;
+  --theme-shadow-header: none;
+  --theme-shadow-btn: none;
+  --theme-shadow-btn-hover: 0 0 30px rgba(204, 255, 0, 0.3);
+  --theme-shadow-ticket: none;
+  --theme-card-bg: rgba(17, 17, 17, 0.5);
+  --theme-header-bg: rgba(5, 5, 5, 0.7);
+  --theme-accent-color: #ccff00;
   
-  --theme-btn-bg: rgb(222, 110, 75);
-  --theme-btn-color: white;
-  --theme-btn-border: 2px solid rgba(255,255,255,0.15);
-  --theme-btn-hover-transform: translate(-1px, -1px);
-  --theme-btn-active-transform: translate(1px, 1px);
-  --theme-shadow-btn-active: 0px 0px 0px 0px black;
+  --theme-btn-bg: #ccff00;
+  --theme-btn-color: #000000;
+  --theme-btn-border: none;
+  --theme-btn-hover-transform: translateY(-2px);
+  --theme-btn-active-transform: translateY(0);
+  --theme-shadow-btn-active: none;
 
-  --theme-shadow-hover: 6px 6px 0px 0px rgba(75, 174, 222, 0.8);
-  --theme-shadow-hover-emerald: 6px 6px 0px 0px rgba(222, 110, 75, 0.8);
-  --theme-shadow-hover-amber: 6px 6px 0px 0px rgba(222, 110, 75, 0.8);
-  --theme-card-hover-transform: translate(-3px, -3px);
+  --theme-shadow-hover: 0 0 30px rgba(204, 255, 0, 0.12);
+  --theme-shadow-hover-emerald: 0 0 30px rgba(204, 255, 0, 0.12);
+  --theme-shadow-hover-amber: 0 0 30px rgba(204, 255, 0, 0.12);
+  --theme-card-hover-transform: translateY(-8px);
 
-  /* Page background (Warm Earthy terracotta) */
-  --bg-base: 24 15% 5%;
-  
-  /* Redefine accent colors to warm southwestern tones dynamically */
-  --accent-violet: 24 75% 58%;    /* Terracotta orange */
-  --accent-pink: 174 70% 50%;     /* Turquoise */
-  --accent-emerald: 38 85% 55%;   /* Soft warm amber */
+  --bg-base: 0 0% 2%;
 }
-
-/* --- THEMED COMPONENTS --- */
 
 .themed-header {
   background: var(--theme-header-bg);
-  border: var(--theme-border);
-  border-radius: var(--theme-border-radius);
-  box-shadow: var(--theme-shadow-header);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -109,11 +45,12 @@
   border: var(--theme-border);
   border-radius: var(--theme-border-radius);
   box-shadow: var(--theme-shadow);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .themed-card:hover {
   transform: var(--theme-card-hover-transform);
+  border-color: rgba(204, 255, 0, 0.4);
   box-shadow: var(--theme-shadow-hover);
 }
 
@@ -129,16 +66,18 @@
   background: var(--theme-btn-bg);
   color: var(--theme-btn-color);
   border: var(--theme-btn-border);
-  border-radius: var(--theme-border-radius);
+  border-radius: 9999px;
   font-family: var(--font-display);
-  font-weight: 700;
-  padding: 12px 24px;
+  font-weight: 600;
+  padding: 14px 32px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   box-shadow: var(--theme-shadow-btn);
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .btn-brutal:hover {
@@ -152,9 +91,9 @@
 }
 
 .themed-footer {
-  border-top: var(--theme-border);
-  background: var(--theme-card-bg);
-  box-shadow: var(--theme-shadow);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: hsl(var(--bg-base));
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
@@ -164,10 +103,10 @@
   overflow: hidden;
   user-select: none;
   width: 100%;
-  border-top: var(--theme-border);
-  border-bottom: var(--theme-border);
-  background: rgba(10, 10, 12, 0.9);
-  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+  padding: 24px 0;
   position: relative;
   z-index: 5;
   transition: all 0.3s ease;
@@ -180,22 +119,27 @@
 
 .ticker-content {
   display: flex;
-  gap: 60px;
-  animation: ticker-slide 20s linear infinite;
+  gap: 80px;
+  animation: ticker-slide 25s linear infinite;
   min-width: 200%;
 }
 
 .ticker-item {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 48px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: white;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
   white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.ticker-item:hover {
+  color: #ccff00;
 }
 
 /* Skeuomorphic Booking Ticket */
@@ -226,7 +170,7 @@
   flex: 0.7;
   padding: 36px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border-left: 2px dashed rgba(255, 255, 255, 0.25);
+  border-left: 2px dashed rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -238,7 +182,7 @@
 @media (max-width: 768px) {
   .ticket-stub {
     border-left: none;
-    border-top: 2px dashed rgba(255, 255, 255, 0.25);
+    border-top: 2px dashed rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -251,7 +195,7 @@
   height: 16px;
   background: hsl(var(--bg-base));
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid rgba(255,255,255,0.15);
   z-index: 2;
 }
 
@@ -288,71 +232,23 @@
   }
 }
 
-/* --- LIGHT / DARK MODE SYSTEM OVERRIDES --- */
+/* --- LIGHT MODE OVERRIDES (Minimal — Arithmify is dark-first) --- */
 
 .mode-light {
-  --text-primary: 240 10% 4%;
-  --text-secondary: 240 5% 25%;
-  --text-muted: 240 4% 45%;
-  
-  --border-subtle: 240 10% 88%;
+  --text-primary: 0 0% 4%;
+  --text-secondary: 0 0% 25%;
+  --text-muted: 0 0% 45%;
+  --border-subtle: 0 0% 88%;
 }
 
-.mode-light.theme-brutalist {
-  --bg-base: 40 15% 97%; /* Warm chalky white background */
-  --theme-card-bg: #ffffff;
-  --theme-header-bg: rgba(255, 255, 255, 0.9);
-  --theme-border: 2px solid #000000;
-  --theme-shadow: 6px 6px 0px 0px #000000;
-  --theme-shadow-header: 4px 4px 0px 0px #000000;
-  --theme-shadow-btn: 4px 4px 0px 0px #000000;
-  --theme-shadow-btn-hover: 6px 6px 0px 0px hsl(var(--accent-pink));
-  --theme-shadow-ticket: 8px 8px 0px 0px hsl(var(--accent-pink));
-  
-  --theme-btn-bg: #000000;
-  --theme-btn-color: #ffffff;
-  --theme-btn-border: 2px solid #000000;
-}
-
-.mode-light.theme-minimalist {
-  --bg-base: 240 15% 96%; /* Clean light gray */
-  --theme-card-bg: rgba(255, 255, 255, 0.7);
-  --theme-header-bg: rgba(255, 255, 255, 0.85);
-  --theme-border: 1px solid rgba(0, 0, 0, 0.08);
-  --theme-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.05);
-  --theme-shadow-header: 0 8px 24px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.05);
-  --theme-shadow-btn: 0 4px 15px rgba(138, 75, 243, 0.2);
-  --theme-shadow-btn-hover: 0 8px 25px rgba(138, 75, 243, 0.4);
-  --theme-shadow-ticket: 0 15px 40px rgba(0, 0, 0, 0.08);
-  
-  --theme-shadow-hover: 0 15px 35px rgba(138, 75, 243, 0.15);
-  --theme-card-hover-transform: translateY(-4px);
-}
-
-.mode-light.theme-organic {
-  --bg-base: 36 30% 95%; /* Cream adobe */
-  --theme-card-bg: rgba(250, 245, 238, 0.95);
-  --theme-header-bg: rgba(250, 245, 238, 0.9);
-  --theme-border: 2px solid rgba(222, 110, 75, 0.35);
-  --theme-shadow: 0 8px 24px rgba(0, 0, 0, 0.05), 4px 4px 0px 0px rgba(222, 110, 75, 0.2);
-  --theme-shadow-header: 0 6px 20px rgba(0, 0, 0, 0.05), 3px 3px 0px 0px rgba(222, 110, 75, 0.2);
-  --theme-shadow-btn: 3px 3px 0px 0px rgba(222, 110, 75, 0.8);
-  --theme-shadow-btn-hover: 4px 4px 0px 0px rgba(75, 174, 222, 0.8);
-  --theme-shadow-ticket: 6px 6px 0px 0px rgba(75, 174, 222, 0.8);
-  
-  --theme-btn-bg: rgb(222, 110, 75);
-  --theme-btn-color: white;
-}
-
-/* Light mode specific component overrides for accessibility */
 .mode-light .ticker-container {
-  background: var(--theme-card-bg) !important;
-  border-top: var(--theme-border) !important;
-  border-bottom: var(--theme-border) !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .mode-light .ticker-item {
-  color: hsl(var(--text-primary)) !important;
+  color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .mode-light .custom-input {
@@ -392,6 +288,5 @@
 .mode-light .ticket-stub::before, 
 .mode-light .ticket-stub::after {
   background: hsl(var(--bg-base)) !important;
-  border-color: var(--theme-btn-border, #000000) !important;
+  border-color: rgba(0,0,0,0.15) !important;
 }
-

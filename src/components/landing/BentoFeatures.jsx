@@ -9,15 +9,15 @@ const SQUAD = [
 
 export default function BentoFeatures() {
   return (
-    <section id="bento" className="bento-section" aria-labelledby="bento-heading">
+    <section id="services" className="bento-section" aria-labelledby="services-heading">
       <div className="bento-header">
-        <h2 id="bento-heading">Custom Solutions. Zero Templates.</h2>
-        <p>Tactile, human-crafted engineering designed to outperform standard automated page builders.</p>
+        <h2 id="services-heading" className="reveal">Expertise</h2>
+        <p className="reveal">Comprehensive digital solutions designed to elevate your brand.</p>
       </div>
 
       <div className="bento-grid">
         {/* Card 1: Full-Stack */}
-        <div className="themed-card bento-col-8 bento-card-stack">
+        <div className="themed-card bento-col-8 bento-card-stack reveal reveal-delay-100">
           <div>
             <span className="step-badge step-badge-info badge-flat">Full-Stack Web Engineering</span>
             <h3>Modern, Edge-Hosted Web Platforms</h3>
@@ -28,22 +28,22 @@ export default function BentoFeatures() {
 
           <div className="stat-row">
             <div className="stat-cell">
-              <h4 style={{ color: 'hsl(var(--accent-violet))' }}>Instant</h4>
+              <h4>Instant</h4>
               <span>Client Load Speeds</span>
             </div>
             <div className="stat-cell">
-              <h4 style={{ color: 'hsl(var(--accent-pink))' }}>Responsive</h4>
+              <h4>Responsive</h4>
               <span>Flawless Layouts</span>
             </div>
             <div className="stat-cell">
-              <h4 style={{ color: 'hsl(var(--accent-emerald))' }}>Secure</h4>
+              <h4>Secure</h4>
               <span>Database Backups</span>
             </div>
           </div>
         </div>
 
         {/* Card 2: Aesthetic */}
-        <div className="themed-card themed-card-emerald bento-col-4 bento-card-aesthetic">
+        <div className="themed-card bento-col-4 bento-card-aesthetic reveal reveal-delay-200">
           <div>
             <span className="step-badge step-badge-success badge-flat">Creative Edge</span>
             <h3>Aesthetic Excellence</h3>
@@ -65,7 +65,7 @@ export default function BentoFeatures() {
         </div>
 
         {/* Card 3: Mission */}
-        <div className="themed-card themed-card-amber bento-col-4 bento-card-mission">
+        <div className="themed-card bento-col-4 bento-card-mission reveal reveal-delay-100">
           <div>
             <span className="step-badge step-badge-warning badge-flat">Our Mission</span>
             <h3>Getting Clients Booked</h3>
@@ -85,7 +85,7 @@ export default function BentoFeatures() {
         </div>
 
         {/* Card 4: Squad */}
-        <div className="themed-card bento-col-8 bento-card-squad">
+        <div className="themed-card bento-col-8 bento-card-squad reveal reveal-delay-200">
           <div>
             <span className="step-badge step-badge-tip badge-flat">Core Agency Squad</span>
             <h3>Meet the CodeTalkers Squad</h3>

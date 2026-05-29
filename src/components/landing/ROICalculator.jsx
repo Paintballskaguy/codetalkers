@@ -7,14 +7,14 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
 
   const getScoreColor = (score) => {
     const val = parseInt(score);
-    if (val > 80) return 'hsl(var(--accent-pink))';
-    if (val > 65) return 'hsl(var(--accent-violet))';
+    if (val > 80) return '#ccff00';
+    if (val > 65) return '#ccff00';
     return 'hsl(var(--accent-blue))';
   };
 
   return (
     <section id="calculator" className="roi-section" aria-labelledby="roi-heading">
-      <div className="themed-card roi-card">
+      <div className="themed-card roi-card reveal">
         <div className="roi-grid">
           {/* Left Column: Sliders */}
           <div className="roi-sliders">
@@ -29,7 +29,7 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
             <div className="slider-group">
               <div className="slider-header">
                 <span>Current Monthly Web/Ad Overhead</span>
-                <span className="slider-value" style={{ color: 'hsl(var(--accent-violet))' }}>
+                <span className="slider-value" style={{ color: '#ccff00' }}>
                   ${opsCost.toLocaleString()}
                 </span>
               </div>
@@ -48,7 +48,7 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
             <div className="slider-group">
               <div className="slider-header">
                 <span>Client Dropout Friction (Bounce Rates)</span>
-                <span className="slider-value" style={{ color: 'hsl(var(--accent-pink))' }}>
+                <span className="slider-value" style={{ color: '#ccff00' }}>
                   {friction}%
                 </span>
               </div>
@@ -69,7 +69,7 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
           <div className="glass-panel roi-results">
             <div>
               <h4 className="results-label">Projected Client Revenue Capture</h4>
-              <div className="results-big" style={{ color: 'hsl(var(--accent-emerald))' }}>
+              <div className="results-big" style={{ color: '#ccff00' }}>
                 ${calculatedSavings.toLocaleString()}
               </div>
               <span className="results-note">*Based on recovery of dropouts &amp; modern conversion capture.</span>

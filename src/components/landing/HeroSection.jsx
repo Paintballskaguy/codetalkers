@@ -1,6 +1,7 @@
+import Icon from '../Icon';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
-export default function HeroSection({ isDarkMode }) {
+export default function HeroSection() {
   const reducedMotion = useReducedMotion();
 
   return (
@@ -9,46 +10,31 @@ export default function HeroSection({ isDarkMode }) {
       className="hero-section"
       aria-labelledby="hero-heading"
     >
-      <div className={`step-badge step-badge-tip ${reducedMotion ? '' : 'floating-element'}`}>
-        <span aria-hidden="true">&#10022;</span> WE DESIGN, WE CODE, WE LAUNCH
+      <div
+        className={`hero-badge ${reducedMotion ? '' : 'floating-element'}`}
+      >
+        <span className="hero-badge-dot" aria-hidden="true" />
+        Family-Owned Agency in Oklahoma
       </div>
 
-      <h1 id="hero-heading" className="hero-title">
-        Making Your Website <span className="shimmer-gradient-text">Look Amazing</span> &amp; Bringing More Clients Through the Door
+      <h1
+        id="hero-heading"
+        className={`hero-title ${reducedMotion ? '' : 'reveal'}`}
+      >
+        Digital.
+        <br />
+        <span className="hero-title-line2">Crafted.</span>
       </h1>
 
-      <p className="hero-subtitle">
-        We are <strong>CodeTalkers</strong> — a family-owned website design and full-stack development firm run by John Wilson, Melissa Wilson, and our close developer squad. We modernize legacy systems and build custom digital platforms to get local small businesses booked.
+      <p className={`hero-subtitle ${reducedMotion ? '' : 'reveal reveal-delay-100'}`}>
+        We are <strong>CodeTalkers</strong> — a family-owned website design and
+        full-stack development firm. We modernize legacy systems and build custom
+        digital platforms to get local small businesses booked.
       </p>
 
-      <div className={`hero-wordmark ${reducedMotion ? '' : 'floating-element'}`}>
-        <img
-          src="/wordmark.png"
-          alt="CodeTalkers Premium Wordmark"
-          width="400"
-          height="60"
-          decoding="async"
-          style={{
-            maxHeight: '60px',
-            width: 'auto',
-            opacity: 0.95,
-            filter: isDarkMode ? 'drop-shadow(0 0 20px hsla(var(--accent-violet) / 0.15))' : 'none',
-          }}
-        />
-      </div>
-
-      <div className="hero-actions">
-        <a href="#ticket" className="btn-brutal">Secure Your Website Quote</a>
-        <a
-          href="#bento"
-          className="btn-brutal"
-          style={{
-            background: 'rgba(128,128,128,0.06)',
-            color: 'hsl(var(--text-primary))',
-            border: '2px solid rgba(128,128,128,0.12)',
-          }}
-        >
-          Explore Toolkit
+      <div className={`hero-actions ${reducedMotion ? '' : 'reveal reveal-delay-200'}`}>
+        <a href="#work" className="btn-brutal">
+          See Our Work <Icon name="arrowRight" size={16} />
         </a>
       </div>
     </section>

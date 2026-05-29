@@ -1,26 +1,14 @@
 import Icon from '../Icon';
 
-const THEMES = [
-  { id: 'brutalist', label: 'Brutal', icon: 'zap', title: 'Brutalist Design System' },
-  { id: 'minimalist', label: 'Sleek', icon: 'sparkle', title: 'Clean Minimalist UI' },
-  { id: 'organic', label: 'Warm', icon: 'palette', title: 'Traditional Organic Earthy Warm Theme' },
-];
-
-export default function LandingHeader({
-  currentTheme,
-  setCurrentTheme,
-  isDarkMode,
-  setIsDarkMode,
-}) {
+export default function LandingHeader() {
   return (
     <header
       className="themed-header"
       style={{
         position: 'sticky',
-        top: '20px',
+        top: 0,
         zIndex: 1000,
-        margin: '0 20px',
-        padding: '16px 32px',
+        padding: '16px 40px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -43,36 +31,11 @@ export default function LandingHeader({
       </a>
 
       <nav className="landing-nav" aria-label="Landing page navigation">
-        <div className="theme-switcher" role="group" aria-label="Theme selector">
-          {THEMES.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setCurrentTheme(t.id)}
-              className={`theme-pill ${currentTheme === t.id ? 'theme-pill-active' : ''}`}
-              title={t.title}
-              aria-pressed={currentTheme === t.id}
-            >
-              <Icon name={t.icon} size={12} />
-              <span>{t.label}</span>
-            </button>
-          ))}
-        </div>
-
-        <button
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          className="mode-toggle"
-          title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        >
-          <Icon name={isDarkMode ? 'sun' : 'moon'} size={16} />
-        </button>
-
-        <a href="#mission" className="nav-anchor">Our Mission</a>
-        <a href="#bento" className="nav-anchor">Solutions</a>
-        <a href="#portfolio" className="nav-anchor">Portfolio</a>
-        <a href="#calculator" className="nav-anchor">ROI Calculator</a>
-        <a href="#calculator" className="btn-brutal cta-btn">
-          Dev Toolkit <Icon name="zap" size={14} />
+        <a href="#services" className="nav-anchor">Services</a>
+        <a href="#work" className="nav-anchor">Work</a>
+        <a href="#about" className="nav-anchor">Agency</a>
+        <a href="#ticket" className="btn-brutal cta-btn">
+          Start a Project <Icon name="arrowRight" size={14} />
         </a>
       </nav>
     </header>
