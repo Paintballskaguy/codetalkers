@@ -9,22 +9,22 @@
   --theme-shadow: none;
   --theme-shadow-header: none;
   --theme-shadow-btn: none;
-  --theme-shadow-btn-hover: 0 0 30px rgba(204, 255, 0, 0.3);
+  --theme-shadow-btn-hover: 0 0 30px hsl(var(--accent-primary) / 0.3);
   --theme-shadow-ticket: none;
   --theme-card-bg: rgba(17, 17, 17, 0.5);
   --theme-header-bg: rgba(5, 5, 5, 0.7);
-  --theme-accent-color: #ccff00;
+  --theme-accent-color: hsl(var(--accent-primary));
   
-  --theme-btn-bg: #ccff00;
+  --theme-btn-bg: hsl(var(--accent-primary));
   --theme-btn-color: #000000;
   --theme-btn-border: none;
   --theme-btn-hover-transform: translateY(-2px);
   --theme-btn-active-transform: translateY(0);
   --theme-shadow-btn-active: none;
 
-  --theme-shadow-hover: 0 0 30px rgba(204, 255, 0, 0.12);
-  --theme-shadow-hover-emerald: 0 0 30px rgba(204, 255, 0, 0.12);
-  --theme-shadow-hover-amber: 0 0 30px rgba(204, 255, 0, 0.12);
+  --theme-shadow-hover: 0 0 30px hsl(var(--accent-primary) / 0.12);
+  --theme-shadow-hover-emerald: 0 0 30px hsl(var(--accent-primary) / 0.12);
+  --theme-shadow-hover-amber: 0 0 30px hsl(var(--accent-primary) / 0.12);
   --theme-card-hover-transform: translateY(-8px);
 
   --bg-base: 0 0% 2%;
@@ -50,7 +50,7 @@
 
 .themed-card:hover {
   transform: var(--theme-card-hover-transform);
-  border-color: rgba(204, 255, 0, 0.4);
+  border-color: hsl(var(--accent-primary) / 0.4);
   box-shadow: var(--theme-shadow-hover);
 }
 
@@ -122,6 +122,7 @@
   gap: 80px;
   animation: ticker-slide 25s linear infinite;
   min-width: 200%;
+  will-change: transform;
 }
 
 .ticker-item {
@@ -139,7 +140,7 @@
 }
 
 .ticker-item:hover {
-  color: #ccff00;
+  color: hsl(var(--accent-primary));
 }
 
 /* Skeuomorphic Booking Ticket */

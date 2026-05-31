@@ -6,7 +6,7 @@
 }
 
 .shimmer-gradient-text {
-  background: linear-gradient(-45deg, #ccff00, #ffffff, #a3a3a3, #ccff00);
+  background: linear-gradient(-45deg, hsl(var(--accent-primary)), #ffffff, #a3a3a3, hsl(var(--accent-primary)));
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -22,6 +22,7 @@
 
 .floating-element {
   animation: floating-slow 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Scroll Reveal Animations */
@@ -67,6 +68,8 @@
 
 .animate-blob {
   animation: blob-pulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 .animation-delay-2000 {

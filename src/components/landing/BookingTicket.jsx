@@ -10,25 +10,58 @@ export default function BookingTicket() {
   const [error, setError] = useState(null);
   const reducedMotion = useReducedMotion();
 
-  const handleTicketSubmit = (e) => {
-    e.preventDefault();
-    setError(null);
-
-    if (!businessName.trim() || !businessEmail.trim()) {
+  const validate = () => {
+    if (!businessName.trim() && !businessEmail.trim()) {
       setError('Please fill in both your business name and contact email.');
-      return;
+      return false;
     }
-
+    if (!businessName.trim()) {
+      setError('Please enter your business name.');
+      return false;
+    }
+    if (!businessEmail.trim()) {
+      setError('Please enter your contact email.');
+      return false;
+    }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(businessEmail)) {
       setError('Please enter a valid email address.');
-      return;
+      return false;
     }
+    setError(null);
+    return true;
+  };
+
+  const handleTicketSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
 
     setIsTearAnimating(true);
     setTimeout(() => {
       setIsTornCompletely(true);
     }, reducedMotion ? 0 : 1200);
+  };
+
+  const handleBlur = (field) => {
+    return () => {
+      const nameVal = businessName.trim();
+      const emailVal = businessEmail.trim();
+      if (field === 'name' && nameVal) {
+        if (!emailVal) setError(null);
+        else validate();
+      }
+      if (field === 'email' && emailVal) {
+        validate();
+      }
+    };
+  };
+
+  const handleReset = () => {
+    setBusinessName('');
+    setBusinessEmail('');
+    setIsTearAnimating(false);
+    setIsTornCompletely(false);
+    setError(null);
   };
 
   return (
@@ -44,7 +77,7 @@ export default function BookingTicket() {
           {!isTornCompletely ? (
             <form onSubmit={handleTicketSubmit} noValidate>
               <h3 className="ticket-form-title">
-                <span aria-hidden="true">&#127915;</span> TICKET STUB ORDER FORM
+                <Icon name="ticket" size={16} /> TICKET STUB ORDER FORM
               </h3>
 
               {error && (
@@ -55,31 +88,35 @@ export default function BookingTicket() {
               )}
 
               <div className="form-field">
-                <label htmlFor="business-name">YOUR BUSINESS NAME</label>
+                <label htmlFor="business-name">YOUR BUSINESS NAME <span aria-hidden="true" className="required-mark">*</span></label>
                 <input
                   id="business-name"
                   type="text"
                   required
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
+                  onBlur={handleBlur('name')}
                   className="custom-input"
                   placeholder="e.g. Broken Arrow Autoworks"
                   autoComplete="organization"
                 />
+                <span className="input-helper">We will use this to personalize your quote.</span>
               </div>
 
               <div className="form-field">
-                <label htmlFor="business-email">YOUR CONTACT EMAIL</label>
+                <label htmlFor="business-email">YOUR CONTACT EMAIL <span aria-hidden="true" className="required-mark">*</span></label>
                 <input
                   id="business-email"
                   type="email"
                   required
                   value={businessEmail}
                   onChange={(e) => setBusinessEmail(e.target.value)}
+                  onBlur={handleBlur('email')}
                   className="custom-input"
                   placeholder="e.g. john@business.com"
                   autoComplete="email"
                 />
+                <span className="input-helper">We will contact you at this address within 24 hours.</span>
               </div>
 
               <p className="ticket-disclaimer">
@@ -95,6 +132,9 @@ export default function BookingTicket() {
               <p>
                 Melissa and John Wilson have received your business request. We will review your current website, map your local SEO benchmarks, and contact you at <strong>{businessEmail}</strong> within 24 hours!
               </p>
+              <button onClick={handleReset} className="btn-brutal ticket-reset">
+                Submit Another Request <Icon name="arrowRight" size={14} />
+              </button>
             </div>
           )}
         </div>
@@ -128,7 +168,7 @@ export default function BookingTicket() {
                 </>
               ) : (
                 <>
-                  Tear Stub to Submit <span aria-hidden="true">&#127915;</span>
+                  Tear Stub to Submit <Icon name="ticket" size={16} />
                 </>
               )}
             </button>

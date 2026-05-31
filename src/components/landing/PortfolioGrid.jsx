@@ -40,7 +40,7 @@ export default function PortfolioGrid() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Open live site for ${project.name} in new tab`}
-              style={{ textDecoration: 'none' }}
+              className="portfolio-link"
             >
               <div className="portfolio-preview">
                 <img
@@ -57,8 +57,8 @@ export default function PortfolioGrid() {
                   <Icon name="arrowRight" size={20} />
                 </div>
               </div>
+              <h3 className="portfolio-title">{project.name}</h3>
             </a>
-            <h3 className="portfolio-title">{project.name}</h3>
           </article>
         ))}
       </div>

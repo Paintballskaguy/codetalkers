@@ -107,6 +107,13 @@ const ICONS = {
       <line x1="12" y1="17" x2="12.01" y2="17" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </>
   ),
+  ticket: (
+    <>
+      <path d="M2 9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v1l-2 2-2-2-2 2-2-2-2 2-2-2L4 10V9Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 10v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="9" y1="13" x2="15" y2="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 20, className = '', style = {} }) {

@@ -17,13 +17,14 @@
   --text-secondary: 0 0% 50%;
   --text-muted: 0 0% 35%;
 
-  /* Accent Colors — unified lime focus with one contrasting blue */
-  --accent-lime: 78 100% 50%;
-  --accent-violet: 78 100% 50%;
-  --accent-pink: 78 100% 50%;
-  --accent-emerald: 78 100% 50%;
-  --accent-amber: 78 100% 50%;
-  --accent-blue: 210 90% 60%;
+  /* Accent Colors — semantic token system */
+  --accent-primary: 78 100% 50%;   /* Brand lime */
+  --accent-lime: 78 100% 50%;      /* Alias for brand lime */
+  --accent-violet: 270 60% 55%;    /* Focus rings, interactive highlights */
+  --accent-pink: 340 80% 55%;      /* Errors, destructive actions */
+  --accent-emerald: 150 70% 45%;   /* Success states */
+  --accent-amber: 38 95% 50%;      /* Warnings, alerts */
+  --accent-blue: 210 90% 60%;      /* Info, links, secondary accent */
 
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -40,7 +41,7 @@ body {
   background-color: hsl(var(--bg-base));
   color: hsl(var(--text-primary));
   font-family: var(--font-sans);
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

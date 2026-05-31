@@ -21,11 +21,12 @@ export default function LandingFooter() {
         </div>
 
         <div className="footer-badge">
-          <a href="#mission" aria-label="Back to top">
+          <a href="#mission" aria-label="Back to top of page">
             <img
               src="/footer-badge.png"
               alt="Built by CodeTalkers Footer Badge"
               width="180"
+              height="60"
               loading="lazy"
               decoding="async"
             />

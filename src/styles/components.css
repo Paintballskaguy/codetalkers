@@ -20,26 +20,26 @@
 
 .glass-panel-interactive:hover {
   transform: translateY(-2px);
-  border-color: rgba(204, 255, 0, 0.4);
-  box-shadow: 0 12px 30px 0 rgba(204, 255, 0, 0.1);
+  border-color: hsl(var(--accent-primary) / 0.4);
+  box-shadow: 0 12px 30px 0 hsl(var(--accent-primary) / 0.1);
 }
 
 /* Modern Gradient Text */
 .text-gradient-purple-pink {
-  background: linear-gradient(135deg, #ccff00 0%, #ffffff 100%);
+  background: linear-gradient(135deg, hsl(var(--accent-primary)) 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-emerald-blue {
-  background: linear-gradient(135deg, #ccff00 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, hsl(var(--accent-primary)) 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Interactive Elements & Buttons */
 .btn-primary {
-  background: #ccff00;
+  background: hsl(var(--accent-primary));
   color: #000000;
   border: none;
   font-family: var(--font-display);
@@ -51,14 +51,14 @@
   align-items: center;
   gap: 8px;
   transition: var(--transition-smooth);
-  box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+  box-shadow: 0 0 20px hsl(var(--accent-primary) / 0.2);
   text-decoration: none;
   font-size: 14px;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(204, 255, 0, 0.4);
+  box-shadow: 0 0 30px hsl(var(--accent-primary) / 0.4);
 }
 
 .btn-primary:active {
@@ -91,7 +91,7 @@
 .app-container {
   display: grid;
   grid-template-columns: 260px 1fr;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 @media (max-width: 1024px) {
@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100dvh;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -143,16 +143,16 @@
   color: hsl(var(--text-primary));
   font-family: var(--font-sans);
   padding: 12px 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
   width: 100%;
   transition: var(--transition-smooth);
 }
 
 .custom-input:focus, .custom-textarea:focus, .custom-select:focus {
-  border-color: #ccff00;
+  border-color: hsl(var(--accent-primary));
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.15);
+  box-shadow: 0 0 0 3px hsl(var(--accent-primary) / 0.15);
 }
 
 .custom-textarea {
@@ -196,8 +196,8 @@
 }
 
 .code-line-highlighted {
-  background: rgba(204, 255, 0, 0.1);
-  border-left: 3px solid #ccff00;
+  background: hsl(var(--accent-primary) / 0.1);
+  border-left: 3px solid hsl(var(--accent-primary));
   padding-left: 9px;
   margin-left: -12px;
 }
@@ -211,9 +211,9 @@
 }
 
 .step-dot-info { background-color: hsl(var(--accent-blue)); }
-.step-dot-success { background-color: #ccff00; }
-.step-dot-warning { background-color: #ccff00; }
-.step-dot-tip { background-color: #ccff00; }
+.step-dot-success { background-color: hsl(var(--accent-emerald)); }
+.step-dot-warning { background-color: hsl(var(--accent-amber)); }
+.step-dot-tip { background-color: hsl(var(--accent-primary)); }
 
 .step-badge {
   display: inline-flex;
@@ -227,10 +227,10 @@
   letter-spacing: 0.05em;
 }
 
-.step-badge-info { background: rgba(204, 255, 0, 0.1); color: #ccff00; border: 1px solid rgba(204, 255, 0, 0.2); }
-.step-badge-success { background: rgba(204, 255, 0, 0.1); color: #ccff00; border: 1px solid rgba(204, 255, 0, 0.2); }
-.step-badge-warning { background: rgba(204, 255, 0, 0.1); color: #ccff00; border: 1px solid rgba(204, 255, 0, 0.2); }
-.step-badge-tip { background: rgba(204, 255, 0, 0.1); color: #ccff00; border: 1px solid rgba(204, 255, 0, 0.2); }
+.step-badge-info { background: hsl(var(--accent-blue) / 0.1); color: hsl(var(--accent-blue)); border: 1px solid hsl(var(--accent-blue) / 0.2); }
+.step-badge-success { background: hsl(var(--accent-emerald) / 0.1); color: hsl(var(--accent-emerald)); border: 1px solid hsl(var(--accent-emerald) / 0.2); }
+.step-badge-warning { background: hsl(var(--accent-amber) / 0.1); color: hsl(var(--accent-amber)); border: 1px solid hsl(var(--accent-amber) / 0.2); }
+.step-badge-tip { background: hsl(var(--accent-primary) / 0.1); color: hsl(var(--accent-primary)); border: 1px solid hsl(var(--accent-primary) / 0.2); }
 
 /* Navigation Button System */
 .nav-btn {
@@ -255,7 +255,7 @@
 .nav-btn-active {
   color: hsl(var(--text-primary)) !important;
   background: rgba(255,255,255,0.06) !important;
-  border-color: rgba(204, 255, 0, 0.4) !important;
+  border-color: hsl(var(--accent-primary) / 0.4) !important;
   font-weight: 600 !important;
 }
 
@@ -296,7 +296,7 @@
 }
 
 .vote-btn:hover {
-  color: #ccff00;
+  color: hsl(var(--accent-primary));
   background: rgba(255, 255, 255, 0.03);
 }
 
