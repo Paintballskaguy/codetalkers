@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+/* Fonts are loaded via <link> in index.html (faster than a render-blocking
+   CSS @import). Keep the families in index.html and the stacks below in sync. */
 
 :root {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Syne', 'Outfit', sans-serif;
+  --font-display: 'Space Grotesk', 'Outfit', sans-serif;
   --font-mono: 'Fira Code', monospace;
 
   /* Arithmify Dark Color System */
@@ -14,8 +15,8 @@
   --border-accent: 78 100% 50%; /* #ccff00 */
   
   --text-primary: 0 0% 98%;
-  --text-secondary: 0 0% 50%;
-  --text-muted: 0 0% 35%;
+  --text-secondary: 0 0% 62%; /* ~7.6:1 on #050505 — was 50% */
+  --text-muted: 0 0% 50%;     /* ~5.1:1 on #050505 — was 35% (failed AA at ~2.9:1) */
 
   /* Accent Colors — semantic token system */
   --accent-primary: 78 100% 50%;   /* Brand lime */

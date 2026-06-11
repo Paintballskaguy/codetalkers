@@ -1,16 +1,48 @@
-# React + Vite
+# CodeTalkers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing site for **CodeTalkers** — a family-owned web design and full-stack
+development agency in Oklahoma, building custom React / Vite / FastAPI platforms
+for small businesses.
 
-Currently, two official plugins are available:
+Single-page landing site built with **React 19** and **Vite 8**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting started
 
-## React Compiler
+```bash
+npm install
+npm run dev      # start the dev server (http://localhost:5173)
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+npm run lint     # run ESLint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project structure
 
-## Expanding the ESLint configuration
+```
+index.html                  Entry HTML — meta/OG/JSON-LD, font <link>, #root
+src/
+  main.jsx                  React root
+  App.jsx                   Skip link, grain overlay, mounts LandingPage
+  components/
+    LandingPage.jsx         Section composition + scroll/active-section observers
+    Icon.jsx                Inline-SVG icon set (currentColor)
+    landing/                Header, Hero, KineticTicker, BentoFeatures,
+                            PortfolioGrid, Stats, Testimonials, ROICalculator,
+                            BookingTicket, Footer
+  hooks/
+    useReducedMotion.js     Tracks prefers-reduced-motion
+  styles/                   tokens → base → themes → components → animations
+                            → landing → utilities (layered, plain CSS)
+public/                     Logos, favicons, project images, robots, sitemap
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Lead capture
+
+The booking form (`BookingTicket.jsx`) POSTs to **Formspree**. Set your endpoint
+in the `FORMSPREE_ENDPOINT` constant at the top of that file
+(`https://formspree.io/f/your-form-id`) and configure the destination email in
+the Formspree dashboard. Until a real endpoint is set, submissions will fail.
+
+## Deployment
+
+Static build deployed on Vercel.

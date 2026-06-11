@@ -1,43 +1,43 @@
 import Icon from '../Icon';
 
 const SQUAD = [
-  { name: 'John Wilson', role: 'Founder & Lead Engineer', icon: 'monitor', bio: 'Engineers custom booking tools, secure client databases, and lightning-fast full-stack platform architectures.' },
-  { name: 'Melissa Wilson', role: 'Co-Founder & UI/UX Director', icon: 'palette', bio: 'Fuses traditional geometric aesthetic precision with modern typography to make small businesses look world-class.' },
-  { name: 'Gabe Ihloff', role: 'Machine Learning Engineer', icon: 'cpu', bio: 'Integrates responsive AI diagnostics, localized NLP workflows, and predictive client-overhead metrics.' },
-  { name: 'Hailee & Nathan', role: 'Technical Contributors', icon: 'zap', bio: 'Supported by Hailee Evans and Nathan Wilson to scale local SEO frameworks and edge database pipelines.' }
+  { name: 'John Wilson', role: 'Founder & Lead Engineer', icon: 'monitor', bio: 'Hand-codes every site — the booking tools, contact forms, and fast, secure pages that work on any device.' },
+  { name: 'Melissa Wilson', role: 'Co-Founder & UI/UX Director', icon: 'palette', bio: 'Designs clean, modern layouts that make local businesses look professional and easy to do business with.' },
+  { name: 'Gabe Ihloff', role: 'Machine Learning Engineer', icon: 'cpu', bio: 'Brings extra engineering depth to the team, focused on the data and automation that make our tools smarter.' },
+  { name: 'Hailee & Nathan', role: 'Technical Contributors', icon: 'zap', bio: 'Hailee Evans and Nathan Wilson pitch in across projects — testing, content, and getting sites ready to launch.' }
 ];
 
 export default function BentoFeatures() {
   return (
     <section id="services" className="bento-section" aria-labelledby="services-heading">
       <div className="bento-header">
-        <h2 id="services-heading" className="reveal">Expertise</h2>
-        <p className="reveal">Comprehensive digital solutions designed to elevate your brand.</p>
+        <h2 id="services-heading" className="reveal">What We Do</h2>
+        <p className="reveal">Straightforward web services for local businesses — hand-coded by people, not page builders.</p>
       </div>
 
       <div className="bento-grid">
         {/* Card 1: Full-Stack */}
         <div className="themed-card bento-col-8 bento-card-stack reveal reveal-delay-100">
           <div>
-            <span className="step-badge step-badge-info badge-flat">Full-Stack Web Engineering</span>
-            <h3>Modern, Edge-Hosted Web Platforms</h3>
+            <span className="step-badge step-badge-info badge-flat">Custom Web Development</span>
+            <h3>Fast, Custom-Coded Websites</h3>
             <p>
-              We replace clunky, template-based websites with bespoke codebase setups built using serverless React/Vite frontends and FastAPI backends. Our sites deploy to global Edge networks, ensuring near-instant local page loading and flawless mobile rendering.
+              We skip the bloated templates and page builders and hand-code your site from scratch. That means it loads fast, looks sharp on phones, and is built around how your business actually works.
             </p>
           </div>
 
           <div className="stat-row">
             <div className="stat-cell">
-              <h4>Instant</h4>
-              <span>Client Load Speeds</span>
+              <h4>Fast</h4>
+              <span>Page Load Speeds</span>
             </div>
             <div className="stat-cell">
-              <h4>Responsive</h4>
-              <span>Flawless Layouts</span>
+              <h4>Mobile</h4>
+              <span>Looks Great on Any Phone</span>
             </div>
             <div className="stat-cell">
               <h4>Secure</h4>
-              <span>Database Backups</span>
+              <span>Safe &amp; Backed Up</span>
             </div>
           </div>
         </div>
@@ -45,10 +45,10 @@ export default function BentoFeatures() {
         {/* Card 2: Aesthetic */}
         <div className="themed-card bento-col-4 bento-card-aesthetic reveal reveal-delay-200">
           <div>
-            <span className="step-badge step-badge-success badge-flat">Creative Edge</span>
-            <h3>Aesthetic Excellence</h3>
+            <span className="step-badge step-badge-success badge-flat">Design</span>
+            <h3>Designed to Stand Out</h3>
             <p>
-              We ensure your business commands attention. Fusing clean displays with traditional geometric feather motifs, we design digital interfaces that are stunning, customized, and memorable.
+              We design clean, modern sites that fit your brand — with the geometric touches that make our work ours — so visitors trust you before they ever pick up the phone.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function BentoFeatures() {
             <span className="step-badge step-badge-warning badge-flat">Our Mission</span>
             <h3>Getting Clients Booked</h3>
             <p>
-              Our job is simple: make you look world-class and bring more clients to your business. We engineer out client dropouts, establishing smooth contact loops, optimized calendars, and high-conversion client forms.
+              Our job is simple: help more local customers find you and reach out. We build smooth contact forms, easy online booking, and the local-search basics so fewer visitors slip away.
             </p>
           </div>
 
@@ -87,9 +87,9 @@ export default function BentoFeatures() {
         {/* Card 4: Squad */}
         <div className="themed-card bento-col-8 bento-card-squad reveal reveal-delay-200">
           <div>
-            <span className="step-badge step-badge-tip badge-flat">Core Agency Squad</span>
-            <h3>Meet the CodeTalkers Squad</h3>
-            <p>We are a group of dedicated local Native software engineers committed to elevating local businesses.</p>
+            <span className="step-badge step-badge-tip badge-flat">Meet the Team</span>
+            <h3>Meet the CodeTalkers Team</h3>
+            <p>We're a small, local team of Native software engineers who care about helping Oklahoma businesses grow online.</p>
           </div>
 
           <div className="squad-grid">

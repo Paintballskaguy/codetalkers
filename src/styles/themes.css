@@ -233,61 +233,6 @@
   }
 }
 
-/* --- LIGHT MODE OVERRIDES (Minimal — Arithmify is dark-first) --- */
-
-.mode-light {
-  --text-primary: 0 0% 4%;
-  --text-secondary: 0 0% 25%;
-  --text-muted: 0 0% 45%;
-  --border-subtle: 0 0% 88%;
-}
-
-.mode-light .ticker-container {
-  background: transparent !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-}
-
-.mode-light .ticker-item {
-  color: rgba(0, 0, 0, 0.25) !important;
-}
-
-.mode-light .custom-input {
-  background: rgba(255, 255, 255, 0.8) !important;
-  color: hsl(var(--text-primary)) !important;
-  border: 1px solid rgba(0, 0, 0, 0.15) !important;
-}
-
-.mode-light .custom-input::placeholder {
-  color: rgba(0, 0, 0, 0.4) !important;
-}
-
-.mode-light .step-badge-tip {
-  background: rgba(251, 191, 36, 0.15) !important;
-  color: #c27803 !important;
-  border: 1px solid rgba(251, 191, 36, 0.3) !important;
-}
-
-.mode-light .step-badge-info {
-  background: rgba(59, 130, 246, 0.15) !important;
-  color: #1e40af !important;
-  border: 1px solid rgba(59, 130, 246, 0.3) !important;
-}
-
-.mode-light .step-badge-success {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #065f46 !important;
-  border: 1px solid rgba(16, 185, 129, 0.3) !important;
-}
-
-.mode-light .glass-panel {
-  background: rgba(255, 255, 255, 0.6) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04) !important;
-}
-
-.mode-light .ticket-stub::before, 
-.mode-light .ticket-stub::after {
-  background: hsl(var(--bg-base)) !important;
-  border-color: rgba(0,0,0,0.15) !important;
-}
+/* Light mode was unused — the page renders dark-only (mode-dark on LandingPage).
+   The .mode-light override block was removed. If a light/dark toggle is added
+   later, reintroduce light variants alongside it. */

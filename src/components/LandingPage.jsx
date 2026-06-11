@@ -6,6 +6,7 @@ import BentoFeatures from './landing/BentoFeatures';
 import PortfolioGrid from './landing/PortfolioGrid';
 import StatsSection from './landing/StatsSection';
 import ROICalculator from './landing/ROICalculator';
+import FAQSection from './landing/FAQSection';
 import BookingTicket from './landing/BookingTicket';
 import LandingFooter from './landing/LandingFooter';
 
@@ -94,6 +95,8 @@ export default function LandingPage() {
           friction={friction}
           setFriction={setFriction}
         />
+
+        <FAQSection />
 
         <BookingTicket />
 

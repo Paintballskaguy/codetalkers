@@ -14,27 +14,31 @@ export default function HeroSection() {
         className={`hero-badge ${reducedMotion ? '' : 'floating-element'}`}
       >
         <span className="hero-badge-dot" aria-hidden="true" />
-        Family-Owned Agency in Oklahoma
+        Family-Owned Web Studio · Tulsa, OK
       </div>
 
       <h1
         id="hero-heading"
         className={`hero-title ${reducedMotion ? '' : 'reveal'}`}
       >
-        Digital.
+        Custom websites for
         <br />
-        <span className="hero-title-line2">Crafted.</span>
+        <span className="hero-title-line2">Oklahoma small businesses.</span>
       </h1>
 
       <p className={`hero-subtitle ${reducedMotion ? '' : 'reveal reveal-delay-100'}`}>
-        We are <strong>CodeTalkers</strong> — a family-owned website design and
-        full-stack development firm. We modernize legacy systems and build custom
-        digital platforms to get local small businesses booked.
+        We're <strong>CodeTalkers</strong> — a family-owned Tulsa studio, fresh
+        out of Atlas IT School. We build fast, custom-coded websites (no templates)
+        that help local businesses get found on Google and turn visitors into
+        booked customers.
       </p>
 
       <div className={`hero-actions ${reducedMotion ? '' : 'reveal reveal-delay-200'}`}>
-        <a href="#work" className="btn-brutal">
-          See Our Work <Icon name="arrowRight" size={16} />
+        <a href="#ticket" className="btn-brutal">
+          Get a Free Quote <Icon name="arrowRight" size={16} />
+        </a>
+        <a href="#work" className="btn-secondary">
+          See Our Work
         </a>
       </div>
     </section>

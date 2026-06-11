@@ -2,9 +2,15 @@ import { useState } from 'react';
 import Icon from '../Icon';
 import useReducedMotion from '../../hooks/useReducedMotion';
 
+// TODO(codetalkers): replace with your real Formspree endpoint, e.g.
+// 'https://formspree.io/f/abcdwxyz'. Create the form at https://formspree.io
+// and set the destination email (John & Melissa) in the Formspree dashboard.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
+
 export default function BookingTicket() {
   const [businessName, setBusinessName] = useState('');
   const [businessEmail, setBusinessEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTearAnimating, setIsTearAnimating] = useState(false);
   const [isTornCompletely, setIsTornCompletely] = useState(false);
   const [error, setError] = useState(null);
@@ -32,14 +38,48 @@ export default function BookingTicket() {
     return true;
   };
 
-  const handleTicketSubmit = (e) => {
+  const handleTicketSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    setIsTearAnimating(true);
-    setTimeout(() => {
-      setIsTornCompletely(true);
-    }, reducedMotion ? 0 : 1200);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          businessName: businessName.trim(),
+          email: businessEmail.trim(),
+          _subject: `New web quote request — ${businessName.trim()}`,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        const message = data?.errors?.map((err) => err.message).join(', ');
+        throw new Error(
+          message || 'We could not submit your request. Please try again in a moment.'
+        );
+      }
+
+      // Submission succeeded — play the tear-off animation, then show success.
+      setIsSubmitting(false);
+      setIsTearAnimating(true);
+      setTimeout(() => {
+        setIsTornCompletely(true);
+      }, reducedMotion ? 0 : 1200);
+    } catch (err) {
+      setIsSubmitting(false);
+      setError(
+        err?.message ||
+          'Network error — please check your connection and try again.'
+      );
+    }
   };
 
   const handleBlur = (field) => {
@@ -59,6 +99,7 @@ export default function BookingTicket() {
   const handleReset = () => {
     setBusinessName('');
     setBusinessEmail('');
+    setIsSubmitting(false);
     setIsTearAnimating(false);
     setIsTornCompletely(false);
     setError(null);
@@ -91,6 +132,7 @@ export default function BookingTicket() {
                 <label htmlFor="business-name">YOUR BUSINESS NAME <span aria-hidden="true" className="required-mark">*</span></label>
                 <input
                   id="business-name"
+                  name="businessName"
                   type="text"
                   required
                   value={businessName}
@@ -107,6 +149,7 @@ export default function BookingTicket() {
                 <label htmlFor="business-email">YOUR CONTACT EMAIL <span aria-hidden="true" className="required-mark">*</span></label>
                 <input
                   id="business-email"
+                  name="email"
                   type="email"
                   required
                   value={businessEmail}
@@ -157,11 +200,16 @@ export default function BookingTicket() {
 
             <button
               onClick={handleTicketSubmit}
-              disabled={isTearAnimating || !businessName || !businessEmail}
+              disabled={isSubmitting || isTearAnimating || !businessName || !businessEmail}
               className="btn-brutal ticket-submit"
               aria-label="Submit booking request by tearing ticket stub"
             >
-              {isTearAnimating ? (
+              {isSubmitting ? (
+                <>
+                  <Icon name="loader" size={14} className="spin-animation" />
+                  Submitting…
+                </>
+              ) : isTearAnimating ? (
                 <>
                   <Icon name="loader" size={14} className="spin-animation" />
                   Tearing Stub…
