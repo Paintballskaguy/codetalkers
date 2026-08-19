@@ -19,21 +19,21 @@ export default function HeroSection() {
 
       <h1
         id="hero-heading"
-        className={`hero-title ${reducedMotion ? '' : 'reveal'}`}
+        className={`hero-title ${reducedMotion ? '' : 'hero-enter'}`}
       >
         Custom websites for
         <br />
         <span className="hero-title-line2">Oklahoma small businesses.</span>
       </h1>
 
-      <p className={`hero-subtitle ${reducedMotion ? '' : 'reveal reveal-delay-100'}`}>
+      <p className={`hero-subtitle ${reducedMotion ? '' : 'hero-enter hero-enter-delay-1'}`}>
         We're <strong>CodeTalkers</strong> — a family-owned Tulsa studio, fresh
         out of Atlas IT School. We build fast, custom-coded websites (no templates)
         that help local businesses get found on Google and turn visitors into
         booked customers.
       </p>
 
-      <div className={`hero-actions ${reducedMotion ? '' : 'reveal reveal-delay-200'}`}>
+      <div className={`hero-actions ${reducedMotion ? '' : 'hero-enter hero-enter-delay-2'}`}>
         <a href="#ticket" className="btn-brutal">
           Get a Free Quote <Icon name="arrowRight" size={16} />
         </a>

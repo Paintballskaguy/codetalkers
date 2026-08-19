@@ -35,8 +35,22 @@ try {
     const page = await browser.newPage();
     const url = new URL(route, baseUrl).href;
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    // Wait until React has rendered the full page (booking section is near the end).
     await page.waitForSelector('#ticket', { timeout: 20000 });
+    // Scroll through sections to activate all reveal animations and observers
+    await page.evaluate(async () => {
+      const sections = ['#mission', '#services', '#work', '#calculator', '#faq', '#ticket'];
+      for (const s of sections) {
+        const el = document.querySelector(s);
+        if (el) {
+          el.scrollIntoView();
+          await new Promise((r) => setTimeout(r, 60));
+        }
+      }
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('active'));
+      window.scrollTo(0, 0);
+    });
+    await new Promise((r) => setTimeout(r, 200));
+
     const html =
       '<!doctype html>\n' + (await page.content()).replace(/^<!DOCTYPE html>/i, '');
 

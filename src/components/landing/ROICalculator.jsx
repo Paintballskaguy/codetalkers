@@ -41,6 +41,10 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
                 onChange={(e) => setOpsCost(Number(e.target.value))}
                 className="roi-slider"
                 aria-label="Current monthly web and ad overhead"
+                aria-valuemin="500"
+                aria-valuemax="10000"
+                aria-valuenow={opsCost}
+                aria-valuetext={`$${opsCost.toLocaleString()} per month`}
               />
             </div>
 
@@ -60,6 +64,10 @@ export default function ROICalculator({ opsCost, setOpsCost, friction, setFricti
                 onChange={(e) => setFriction(Number(e.target.value))}
                 className="roi-slider"
                 aria-label="Client dropout friction percentage"
+                aria-valuemin="10"
+                aria-valuemax="80"
+                aria-valuenow={friction}
+                aria-valuetext={`${friction} percent bounce rate`}
               />
             </div>
           </div>

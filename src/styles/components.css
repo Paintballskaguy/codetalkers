@@ -288,16 +288,19 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: 13px;
   transition: var(--transition-fast);
-  padding: 4px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 8px;
 }
 
 .vote-btn:hover {
   color: hsl(var(--accent-primary));
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .vote-btn:active {

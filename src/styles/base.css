@@ -36,6 +36,13 @@ button:focus-visible,
   border-radius: 8px;
 }
 
+.btn-brutal:focus-visible,
+.btn-primary:focus-visible {
+  outline: 2px solid hsl(var(--text-primary));
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px hsl(var(--accent-primary) / 0.4);
+}
+
 /* Beautiful Animated Background Mesh */
 .app-bg-mesh {
   position: fixed;

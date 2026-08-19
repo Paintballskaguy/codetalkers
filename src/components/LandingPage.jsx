@@ -23,10 +23,11 @@ export default function LandingPage() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.05, rootMargin: '100px 0px 100px 0px' }
     );
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
@@ -64,15 +65,15 @@ export default function LandingPage() {
         transition: 'background-color 0.5s ease, color 0.3s ease',
       }}
     >
-      {/* Floating Gradient Blobs */}
+      {/* Ambient Brand Lighting */}
       <>
         <div
           aria-hidden="true"
-          className="hero-blur hero-blur-violet animate-blob"
+          className="hero-blur hero-blur-primary animate-blob"
         />
         <div
           aria-hidden="true"
-          className="hero-blur hero-blur-pink animate-blob animation-delay-2000"
+          className="hero-blur hero-blur-secondary animate-blob animation-delay-2000"
         />
       </>
 
