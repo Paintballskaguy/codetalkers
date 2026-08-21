@@ -3,9 +3,9 @@ import Icon from '../Icon';
 const PROJECTS = [
   {
     id: 1,
-    name: 'Boman Twine Company',
-    client: 'Manufacturing & Industrial',
-    description: 'A professional industrial supply website with product catalogs, contact forms, and mobile-first responsive design built for B2B client acquisition.',
+    name: 'The Boman',
+    client: 'Music Venue and Special Events Center',
+    description: 'A professional live music venue website with booking information, contact forms, and mobile-first responsive design built for ease of use.',
     tags: ['React', 'Vite', 'Responsive'],
     category: 'Web App',
     image: '/project-boman-twine.jpg',

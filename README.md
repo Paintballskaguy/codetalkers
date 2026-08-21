@@ -36,6 +36,11 @@ src/
 public/                     Logos, favicons, project images, robots, sitemap
 ```
 
+## Documentation
+
+Operator guides live in [`docs/`](docs/README.md): development setup and
+gates, deployment, site operations, and the ICM change workflow.
+
 ## Lead capture
 
 The booking form (`BookingTicket.jsx`) POSTs to **Formspree**. Set your endpoint
