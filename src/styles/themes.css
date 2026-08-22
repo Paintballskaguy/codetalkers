@@ -15,9 +15,9 @@
   --theme-header-bg: rgba(5, 5, 5, 0.7);
   --theme-accent-color: hsl(var(--accent-primary));
   
-  --theme-btn-bg: hsl(var(--accent-primary));
-  --theme-btn-color: #000000;
-  --theme-btn-border: none;
+  --theme-btn-bg: transparent;
+  --theme-btn-color: hsl(var(--accent-primary));
+  --theme-btn-border: 1px solid hsl(var(--accent-primary));
   --theme-btn-hover-transform: translateY(-2px);
   --theme-btn-active-transform: translateY(0);
   --theme-shadow-btn-active: none;
@@ -27,7 +27,7 @@
   --theme-shadow-hover-amber: 0 0 30px hsl(var(--accent-primary) / 0.12);
   --theme-card-hover-transform: translateY(-8px);
 
-  --bg-base: 0 0% 2%;
+  --bg-base: 0 0% 0%;
 }
 
 .themed-header {
@@ -67,7 +67,7 @@
   color: var(--theme-btn-color);
   border: var(--theme-btn-border);
   border-radius: 9999px;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 600;
   padding: 14px 32px;
   cursor: pointer;
@@ -76,11 +76,15 @@
   gap: 8px;
   box-shadow: var(--theme-shadow-btn);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  font-size: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   text-decoration: none;
 }
 
 .btn-brutal:hover {
+  background: hsl(var(--accent-primary));
+  color: #000000;
   transform: var(--theme-btn-hover-transform);
   box-shadow: var(--theme-shadow-btn-hover);
 }
@@ -127,7 +131,7 @@
 
 .ticker-item {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 48px;
   text-transform: uppercase;
   letter-spacing: 0.05em;

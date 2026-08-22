@@ -49,7 +49,7 @@
 }
 
 .brand-text {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -71,8 +71,9 @@
 .nav-anchor {
   color: hsl(var(--text-secondary));
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -204,7 +205,7 @@
   color: hsl(var(--text-primary));
   text-decoration: none;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   font-family: var(--font-display);
   transition: color 0.3s ease;
 }
@@ -271,18 +272,16 @@
 
 .hero-title {
   font-size: 96px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.0;
   max-width: 900px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: hsl(var(--text-primary));
-  text-transform: uppercase;
 }
 
 .hero-title-line2 {
-  background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  color: hsl(var(--accent-primary));
 }
 
 .hero-subtitle {
@@ -373,7 +372,7 @@
 
 .bento-header h2 {
   font-size: 38px;
-  font-weight: 800;
+  font-weight: 400;
   color: hsl(var(--text-primary));
 }
 
@@ -396,7 +395,7 @@
 
 .bento-card-stack h3 {
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 12px;
   color: hsl(var(--text-primary));
   word-break: keep-all;
@@ -425,7 +424,7 @@
 
 .stat-cell h4 {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .stat-cell span {
@@ -443,7 +442,7 @@
 
 .bento-card-aesthetic h3 {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 12px;
   color: hsl(var(--text-primary));
   word-break: keep-all;
@@ -482,7 +481,7 @@
 
 .bento-card-mission h3 {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 12px;
   color: hsl(var(--text-primary));
   word-break: keep-all;
@@ -526,7 +525,7 @@
 
 .bento-card-squad h3 {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 8px;
   color: hsl(var(--text-primary));
   word-break: keep-all;
@@ -553,7 +552,7 @@
 
 .squad-member h4 {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 400;
   color: hsl(var(--text-primary));
 }
 
@@ -599,11 +598,10 @@
 
 .portfolio-header h2 {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   color: hsl(var(--text-primary));
   margin-top: 12px;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .portfolio-header p {
@@ -729,7 +727,7 @@
 
 .portfolio-title {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 400;
   color: hsl(var(--text-primary));
   transition: color 0.3s ease;
   font-family: var(--font-display);
@@ -770,7 +768,7 @@
 
 .roi-sliders h2 {
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 10px;
   color: hsl(var(--text-primary));
 }
@@ -823,7 +821,7 @@
 
 .results-big {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 400;
   font-family: var(--font-display);
   line-height: 1;
 }
@@ -849,7 +847,7 @@
 
 .results-mid {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 400;
   color: hsl(var(--text-primary));
 }
 
@@ -889,7 +887,7 @@
 
 .ticket-header h2 {
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 400;
   color: hsl(var(--text-primary));
 }
 
@@ -938,7 +936,7 @@
 .ticket-success h3 {
   font-size: 24px;
   color: hsl(var(--accent-emerald));
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .ticket-success p {
@@ -1064,7 +1062,7 @@
 }
 
 .footer-brand-row h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 20px;
   font-weight: 700;
   color: hsl(var(--text-primary));
@@ -1145,7 +1143,7 @@
 
 .stats-text h2 {
   font-size: 42px;
-  font-weight: 700;
+  font-weight: 400;
   color: hsl(var(--text-primary));
   margin-bottom: 16px;
   line-height: 1.1;
@@ -1180,7 +1178,7 @@
 
 .stats-value {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   color: hsl(var(--accent-primary));
   margin-bottom: 8px;
   font-family: var(--font-display);
@@ -1254,7 +1252,7 @@
 
 .faq-header h2 {
   font-size: 38px;
-  font-weight: 800;
+  font-weight: 400;
   color: hsl(var(--text-primary));
   margin-top: 12px;
 }
@@ -1291,7 +1289,7 @@
   min-height: 44px;
   cursor: pointer;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   color: hsl(var(--text-primary));
   list-style: none;

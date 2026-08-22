@@ -3,11 +3,11 @@
 
 :root {
   --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk', 'Outfit', sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
   --font-mono: 'Fira Code', monospace;
 
   /* Arithmify Dark Color System */
-  --bg-base: 0 0% 2%;       /* #050505 */
+  --bg-base: 0 0% 0%;       /* #000 */
   --bg-surface: 0 0% 4%;    /* #0a0a0a */
   --bg-surface-elevated: 0 0% 7%; /* #111 */
   
